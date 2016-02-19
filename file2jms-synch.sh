@@ -21,7 +21,7 @@ function input_filename
 	read -r -p "Enter file name or type \"q\" to quit : " filename
 	local filename=${filename}
 
-case $filename in
+	case $filename in
 	"q" )
 	exit 0
 	;;
@@ -52,7 +52,7 @@ function file2jms_menu
 	read -r -p "This will synch $filename to ALL MTRouters, and restart $process . continue? [Y/N]: " userinput
 	local userinput=${userinput}
 
-case $userinput in
+	case $userinput in
 	"Y" )
 	synch_file2jms $filename
 	;;
@@ -69,7 +69,7 @@ case $userinput in
 function synch_file2jms
 {
 	local filename=$1
-	local mtrouters="fr1mtrouter001 fr1mtrouter002 fr1mtrouter003 fr1mtrouter004 fr1mtrouter005 fr1mtrouter006 fr1mtrouter007 fr1mtrouter008 fr1mtrouter101 fr1mtrouter102 uk4mtrouter01 uk4mtrouter02 uk4mtrouter003 uk4mtrouter004"
+	local mtrouters="fr1mtrouter001 fr1mtrouter002 fr1mtrouter003 fr1mtrouter004 fr1mtrouter005 fr1mtrouter006 fr1mtrouter007 fr1mtrouter008 fr1mtrouter009 fr1mtrouter010 fr1mtrouter011 fr1mtrouter012 fr1mtrouter013 fr1mtrouter014 fr1mtrouter101 fr1mtrouter102 uk4mtrouter01 uk4mtrouter02 uk4mtrouter003"
 
 	echo "`date +%F' '%T` START Synching ${basefilename}/${filename} " | tee -a ${logfilename}
 
